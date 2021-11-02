@@ -1,0 +1,24 @@
+{
+  "name": "projeto01",
+  "version": "1.0.0",
+  "description": "Primeiro projeto do módulo 03",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MirianAmorim/MOD03Proj1_BackEnd-NODE-Express.git"
+  },
+  "author": "Mirian Amorim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MirianAmorim/MOD03Proj1_BackEnd-NODE-Express/issues"
+  },
+  "homepage": "https://github.com/MirianAmorim/MOD03Proj1_BackEnd-NODE-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
