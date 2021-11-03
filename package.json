@@ -19,6 +19,8 @@
   "homepage": "https://github.com/MirianAmorim/MOD03Proj1_BackEnd-NODE-Express#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mogoose": "^0.0.1-security",
+    "mongoose": "^6.0.12",
     "nodemon": "^2.0.14"
   }
 }
