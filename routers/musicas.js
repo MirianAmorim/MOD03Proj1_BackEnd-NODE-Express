@@ -1,6 +1,7 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
-const musica = require("../model/musicas"); // import do modelo musica
+
+let musicas =[];
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota musicas ok"});

@@ -1,6 +1,7 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
-const pessoa = require("../model/pessoas"); // import do modelo pessoa
+
+let pessoas = []
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota pessoas ok"});
@@ -12,8 +13,8 @@ router.get('/:id', (req,res) => {
     res.status(200).json({index});
 });
 
-router.get('/listar', async (req,res) => {
-    await pessoa.find({}).then((pessoas) => { //pega todo mundo do banco
+router.get('/listar', (req,res) => {
+        pessoa.find({}).then((pessoas) => {
         console.log(pessoas);
         res.status(200).json(pessoas);
     }).catch((err) => {
@@ -22,13 +23,38 @@ router.get('/listar', async (req,res) => {
     });
 });
 
-router.post('/add', async (req,res) => { //add nova pessoa no banco
-    await pessoa.create(req.body).then(() => {
-        res.status(200).json({message: "cadastrado com sucesso"});
-    }).catch((err) => {
-        res.status(400).json({message: "algo está errado"});
-        console.error(err);
-    })
+router.post("/", (req,res) => {
+    const pessoa = req.body;
+
+    if(!pessoa.nome){
+        res.status(400).json({message:"nome na requisição esta vazio"});
+        return;
+    }
+    if(!pessoa.altura){
+        res.status(400).json({message:"altura na requisição esta vazio"});
+        return;
+    }
+
+    listaPessoas.push(pessoa); 
+    res.status(201).json({message:"cadastrado com sucesso"});
+});
+
+router.put("/update:id", (req,res) => {
+    const id = req.params.id;
+    const pessoa = pessoas[id];
+    
+    console.log(pessoa);
+    
+    pessoas[id] = req.body;
+
+    res.status(200).json(pessoas[id]);
+});
+
+router.delete("/del:id", (req,res) => {
+    const id = req.params.id;
+    delete pessoas[id];
+    console.log(pessoas[id]);
+    res.status(200).json(pessoas);
 });
 
 module.exports = router; //exportando o modelo pronto

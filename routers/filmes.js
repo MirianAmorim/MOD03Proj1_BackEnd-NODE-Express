@@ -1,12 +1,13 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
-const filme = require("../model/filmes"); // import do modelo filme
+
+let filmes = [];
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota filmes ok"});
 });
 
-router.get('/:id', (req,res) => {
+router.put('/:id', (req,res) => {
     const id = req.params.id;
     const index = filmes[id];
     res.status(200).json({index});
