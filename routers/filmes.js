@@ -1,7 +1,11 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
 
-let filmes = [];
+let filmes = [
+    {'nome':'Um Lugar', 'faixaEtaria':14, 'ano':2021, 'gênero':'Drama'},
+    {'nome':'Palmer', 'faixaEtaria':16, 'ano':2021, 'gênero':'Drama'},
+    {'nome':'O Rei', 'faixaEtaria':16, 'ano':2019, 'gênero':'Drama'}
+];
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota filmes ok"});

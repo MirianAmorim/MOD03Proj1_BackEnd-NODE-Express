@@ -1,7 +1,11 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
 
-let musicas =[];
+let musicas =[
+    {'nome':'Dia Especial', 'cantor':'Tiago Iork', 'ano':2014, 'gênero':'MPB'},
+    {'nome':'Vieste', 'cantor':'Ivan Lins', 'ano':1987, 'gênero':'MPB'},
+    {'nome':'Ai, Amor', 'cantor':'AnaVitória', 'ano':2018, 'gênero':'MPB'}
+];
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota musicas ok"});

@@ -1,7 +1,11 @@
 const express = require("express"); //import do express
 const router = express.Router(); //define app como express
 
-let pessoas = []
+let pessoas = [
+    {'nome':'Mirian', 'idade':32, 'altura':1.59, 'peso':72},
+    {'nome':'Rafael', 'idade':36, 'altura':1.85, 'peso':98},
+    {'nome':'Ariel', 'idade':10, 'altura':1.32, 'peso':40}
+]
 
 router.get('/', (req,res) => {
     res.status(200).json({message:"rota pessoas ok"});
