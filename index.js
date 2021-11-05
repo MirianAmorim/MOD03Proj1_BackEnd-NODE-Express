@@ -10,13 +10,13 @@ app.get("/", (req,res) => {
 });
 
 const pessoasRouter = require("./routers/pessoas");
-app.use('/',pessoasRouter);
+app.use('/pessoas',pessoasRouter);
 
 const musicasRouter = require("./routers/musicas");
-app.use('/',musicasRouter);
+app.use('/musicas',musicasRouter);
 
 const filmesRouter = require("./routers/filmes");
-app.use('/',filmesRouter);
+app.use('/filmes',filmesRouter);
 
 app.listen(port, () => {
     console.log(`Servidor rodando em: http://localhost:${port}`);
